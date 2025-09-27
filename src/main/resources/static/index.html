@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTGraphQL - Test Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h1 class="card-title">🚀 BTGraphQL Application</h1>
+                        <p class="card-text">Spring Boot 3 + GraphQL Application is running successfully!</p>
+                        
+                        <div class="row mt-4">
+                            <div class="col-md-4 mb-3">
+                                <div class="card bg-light">
+                                    <div class="card-body">
+                                        <h5 class="card-title">🧑‍🤝‍🧑 Users</h5>
+                                        <p class="card-text">Manage users with CRUD operations</p>
+                                        <a href="/BTGraphQL/users-html" class="btn btn-primary">Go to Users</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 mb-3">
+                                <div class="card bg-light">
+                                    <div class="card-body">
+                                        <h5 class="card-title">📂 Categories</h5>
+                                        <p class="card-text">Manage product categories</p>
+                                        <a href="/BTGraphQL/categories-html" class="btn btn-success">Go to Categories</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 mb-3">
+                                <div class="card bg-light">
+                                    <div class="card-body">
+                                        <h5 class="card-title">🛍️ Products</h5>
+                                        <p class="card-text">Manage products and inventory</p>
+                                        <a href="/BTGraphQL/products-html" class="btn btn-info">Go to Products</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <hr>
+                        
+                        <div class="row mt-4">
+                            <div class="col-md-6 mb-3">
+                                <div class="card bg-warning">
+                                    <div class="card-body">
+                                        <h5 class="card-title">🔧 GraphQL Playground</h5>
+                                        <p class="card-text">Test GraphQL queries and mutations</p>
+                                        <a href="/BTGraphQL/graphiql" class="btn btn-warning" target="_blank">Open GraphiQL</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <div class="card bg-secondary text-white">
+                                    <div class="card-body">
+                                        <h5 class="card-title">🗄️ H2 Database</h5>
+                                        <p class="card-text">Access database console</p>
+                                        <a href="/BTGraphQL/h2-console" class="btn btn-light" target="_blank">H2 Console</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <small class="text-muted">
+                                GraphQL Endpoint: <code>POST /BTGraphQL/graphql</code><br>
+                                Database: H2 In-Memory (testdb)<br>
+                                Context Path: <code>/BTGraphQL</code>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+# GraphQL Schema Definition
+
+# Scalar Types
+scalar BigDecimal
+
+# User Type
+type User {
+    id: ID!
+    fullname: String!
+    email: String!
+    password: String!
+    phone: String
+    products: [Product!]!
+    categories: [Category!]!
+}
+
+# Category Type
+type Category {
+    id: ID!
+    name: String!
+    images: String
+    users: [User!]!
+}
+
+# Product Type
+type Product {
+    id: ID!
+    title: String!
+    quantity: Int
+    desc: String
+    price: BigDecimal!
+    user: User!
+}
+
+# Input Types for Mutations
+input UserInput {
+    fullname: String!
+    email: String!
+    password: String!
+    phone: String
+}
+
+input UserUpdateInput {
+    id: ID!
+    fullname: String
+    email: String
+    password: String
+    phone: String
+}
+
+input CategoryInput {
+    name: String!
+    images: String
+}
+
+input CategoryUpdateInput {
+    id: ID!
+    name: String
+    images: String
+}
+
+input ProductInput {
+    title: String!
+    quantity: Int
+    desc: String
+    price: BigDecimal!
+    userId: ID!
+}
+
+input ProductUpdateInput {
+    id: ID!
+    title: String
+    quantity: Int
+    desc: String
+    price: BigDecimal
+    userId: ID
+}
+
+# Query Type
+type Query {
+    # User queries
+    users: [User!]!
+    user(id: ID!): User
+    userByEmail(email: String!): User
+    
+    # Category queries
+    categories: [Category!]!
+    category(id: ID!): Category
+    categoryByName(name: String!): Category
+    
+    # Product queries
+    products: [Product!]!
+    product(id: ID!): Product
+    productsByPriceAsc: [Product!]!
+    productsByCategory(categoryId: ID!): [Product!]!
+    productsByUser(userId: ID!): [Product!]!
+}
+
+# Mutation Type
+type Mutation {
+    # User mutations
+    createUser(input: UserInput!): User!
+    updateUser(input: UserUpdateInput!): User!
+    deleteUser(id: ID!): Boolean!
+    
+    # Category mutations
+    createCategory(input: CategoryInput!): Category!
+    updateCategory(input: CategoryUpdateInput!): Category!
+    deleteCategory(id: ID!): Boolean!
+    
+    # Product mutations
+    createProduct(input: ProductInput!): Product!
+    updateProduct(input: ProductUpdateInput!): Product!
+    deleteProduct(id: ID!): Boolean!
+    
+    # Association mutations
+    addUserToCategory(userId: ID!, categoryId: ID!): Boolean!
+    removeUserFromCategory(userId: ID!, categoryId: ID!): Boolean!
+}
